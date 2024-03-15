@@ -1,6 +1,6 @@
 streamlit
 tensorflow
-opencv-python
+opencv-python==4.5.4.60
 scikit-learn
 PyOpenGL
 PyOpenGL_accelerate
