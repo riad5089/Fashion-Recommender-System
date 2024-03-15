@@ -32,13 +32,12 @@ def recommend_similar_images(img):
     expand_img = np.expand_dims(img, axis=0)
     pre_img = preprocess_input(expand_img)
     result = model.predict(pre_img).flatten()
-    normalized = result / norm(result)
+    normilized = result / norm(result)
     
-    distance, indices = NearestNeighbors.kneighbors([normalized])
+    distance, indices = NearestNeighbors.kneighbors([normilized])
     similar_images = []
-    for file_index in indices[0][1:6]:
-        # Directly use the image array obtained from filenames list
-        similar_images.append(cv2.cvtColor(cv2.imdecode(np.fromfile(filenames[file_index], dtype=np.uint8), cv2.IMREAD_UNCHANGED), cv2.COLOR_BGR2RGB))
+    for file in indices[0][1:6]:
+        similar_images.append(cv2.imread(filenames[file]))
 
     return similar_images
 
