@@ -1,7 +1,6 @@
 streamlit
 tensorflow
 opencv-python
+gunicorn
 scikit-learn
-PyOpenGL
-PyOpenGL_accelerate
 altair==4.2.2
